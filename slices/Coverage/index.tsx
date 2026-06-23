@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
 /**
  * Props for `Coverage`.
@@ -16,11 +17,15 @@ const Coverage: FC<CoverageProps> = ({ slice }) => {
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}
 		>
-			Placeholder component for {slice.slice_type} (variation: {slice.variation}) slices.
-			<br />
-			<strong>You can edit this slice directly in your code editor.</strong>
+			<p>{slice.primary.eyebrow}</p>
+			<PrismicRichText field={slice.primary.title} />
+			<PrismicRichText field={slice.primary.text} />
+			<PrismicNextImage field={slice.primary.image} />
+			{slice.primary.cta.map((link, index) => (
+				<PrismicNextLink key={index} field={link} />
+			))}
 		</section>
-	)
+	);
 };
 
-export default Coverage
+export default Coverage;
