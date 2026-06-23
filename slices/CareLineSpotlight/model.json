@@ -16,7 +16,7 @@
           "config": {
             "label": "Title",
             "placeholder": "",
-            "multi": "heading1,strong,em",
+            "multi": "strong,em,heading2",
             "allowTargetBlank": true
           }
         },
