@@ -1,0 +1,55 @@
+{
+  "id": "care_line_spotlight",
+  "type": "SharedSlice",
+  "name": "CareLineSpotlight",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default",
+      "imageUrl": "",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "multi": "heading1,strong,em",
+            "allowTargetBlank": true
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text",
+            "placeholder": "",
+            "multi": "paragraph,em,hyperlink,strong,list-item,o-list-item",
+            "allowTargetBlank": true
+          }
+        },
+        "cta": {
+          "type": "Link",
+          "config": {
+            "label": "Cta",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": true
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      }
+    }
+  ],
+  "description": "CareLineSpotlight"
+}

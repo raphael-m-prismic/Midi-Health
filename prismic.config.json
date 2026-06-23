@@ -1,0 +1,13 @@
+{
+  "repositoryName": "midi-health-demo",
+  "routes": [
+    {
+      "type": "home",
+      "path": "/home"
+    },
+    {
+      "type": "page",
+      "path": "/:uid"
+    }
+  ]
+}
