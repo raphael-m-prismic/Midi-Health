@@ -1,7 +1,8 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextLink } from "@prismicio/next";
+import { RichText } from "@/components/RichText";
 
 /**
  * Props for `Faq`.
@@ -18,13 +19,13 @@ const Faq: FC<FaqProps> = ({ slice }) => {
 			data-slice-variation={slice.variation}
 		>
 			<p>{slice.primary.eyebrow}</p>
-			<PrismicRichText field={slice.primary.title} />
-			<PrismicRichText field={slice.primary.text} />
+			<RichText field={slice.primary.title} />
+			<RichText field={slice.primary.text} />
 			<ul>
 				{slice.primary.questions.map((item, index) => (
 					<li key={index}>
 						<h3>{item.question}</h3>
-						<PrismicRichText field={item.answer} />
+						<RichText field={item.answer} />
 					</li>
 				))}
 			</ul>

@@ -1,7 +1,8 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { RichText } from "@/components/RichText";
 
 /**
  * Props for `Hero`.
@@ -18,8 +19,8 @@ const Hero: FC<HeroProps> = ({ slice }) => {
 			data-slice-variation={slice.variation}
 		>
 			<p>{slice.primary.eyebrow}</p>
-			<PrismicRichText field={slice.primary.title} />
-			<PrismicRichText field={slice.primary.text} />
+			<RichText field={slice.primary.title} />
+			<RichText field={slice.primary.text} />
 			<PrismicNextImage field={slice.primary.image} />
 			{slice.primary.cta.map((link, index) => (
 				<PrismicNextLink key={index} field={link} />
