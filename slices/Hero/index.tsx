@@ -38,7 +38,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
 						<li key={index}>
 							<PrismicNextLink
 								field={link}
-								className="inline-block rounded-full bg-neutral-50 px-8 py-4 font-semibold text-neutral-900"
+								className="inline-block rounded-xl bg-neutral-50 px-8 py-4 font-semibold text-neutral-900"
 							/>
 						</li>
 					))}

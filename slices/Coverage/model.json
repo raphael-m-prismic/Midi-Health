@@ -56,6 +56,53 @@
           }
         }
       }
+    },
+    {
+      "id": "imageLeft",
+      "name": "Image Left",
+      "description": "Image Left",
+      "docURL": "",
+      "imageUrl": "",
+      "version": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow"
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "multi": "heading2,strong,em",
+            "allowTargetBlank": true
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text",
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+            "allowTargetBlank": true
+          }
+        },
+        "cta": {
+          "type": "Link",
+          "config": {
+            "label": "Cta",
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": true
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image"
+          }
+        }
+      }
     }
   ],
   "description": "Coverage"

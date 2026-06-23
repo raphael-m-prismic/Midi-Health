@@ -301,9 +301,73 @@ export interface CoverageSliceDefaultPrimary {
 export type CoverageSliceDefault = prismic.SharedSliceVariation<"default", Simplify<CoverageSliceDefaultPrimary>, never>;
 
 /**
+ * Primary content in *Coverage → Image Left → Primary*
+ */
+export interface CoverageSliceImageLeftPrimary {
+	/**
+	 * Eyebrow field in *Coverage → Image Left → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: coverage.imageLeft.primary.eyebrow
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	eyebrow: prismic.KeyTextField;
+	
+	/**
+	 * Title field in *Coverage → Image Left → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: coverage.imageLeft.primary.title
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	title: prismic.RichTextField;
+	
+	/**
+	 * Text field in *Coverage → Image Left → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: coverage.imageLeft.primary.text
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	text: prismic.RichTextField;
+	
+	/**
+	 * Cta field in *Coverage → Image Left → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: coverage.imageLeft.primary.cta
+	 * - **Documentation**: https://prismic.io/docs/fields/link
+	 */
+	cta: prismic.Repeatable<prismic.LinkField<string, string, unknown, prismic.FieldState, never>>;
+	
+	/**
+	 * Image field in *Coverage → Image Left → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: coverage.imageLeft.primary.image
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
+ * Image Left variation for Coverage Slice
+ *
+ * - **API ID**: `imageLeft`
+ * - **Description**: Image Left
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CoverageSliceImageLeft = prismic.SharedSliceVariation<"imageLeft", Simplify<CoverageSliceImageLeftPrimary>, never>;
+
+/**
  * Slice variation for *Coverage*
  */
-type CoverageSliceVariation = CoverageSliceDefault
+type CoverageSliceVariation = CoverageSliceDefault | CoverageSliceImageLeft
 
 /**
  * Coverage Shared Slice
@@ -685,8 +749,10 @@ declare module "@prismicio/client" {
 			CareLineSpotlightSliceDefault,
 			CoverageSlice,
 			CoverageSliceDefaultPrimary,
+			CoverageSliceImageLeftPrimary,
 			CoverageSliceVariation,
 			CoverageSliceDefault,
+			CoverageSliceImageLeft,
 			FaqSlice,
 			FaqSliceDefaultPrimaryQuestionsItem,
 			FaqSliceDefaultPrimary,
