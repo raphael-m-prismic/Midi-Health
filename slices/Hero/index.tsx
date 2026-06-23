@@ -32,9 +32,9 @@ const Hero: FC<HeroProps> = ({ slice }) => {
 			)}
 			<RichText field={slice.primary.title} />
 			<RichText field={slice.primary.text} />
-			{slice.primary.cta.length > 0 && (
+			{(slice.primary.cta ?? []).length > 0 && (
 				<ul className="mt-6 flex flex-wrap gap-4">
-					{slice.primary.cta.map((link, index) => (
+					{(slice.primary.cta ?? []).map((link, index) => (
 						<li key={index}>
 							<PrismicNextLink
 								field={link}

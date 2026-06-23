@@ -53,7 +53,7 @@ export function RichText({ field, components, additionalClassNames }: Props) {
     ),
     image: ({ node }) => (
       <figure className={clsx("my-6", additionalClassNames)}>
-        <img src={node.url} alt={node.alt ?? ""} className="w-full rounded object-cover" />
+        <img src={node.url} alt={node.alt ?? ""} className="w-full object-cover" />
         {node.alt && <figcaption className="mt-2 text-center text-sm text-neutral-900">{node.alt}</figcaption>}
       </figure>
     ),

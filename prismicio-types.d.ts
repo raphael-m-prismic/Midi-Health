@@ -526,6 +526,16 @@ export interface FeatureSliceDefaultPrimary {
 	image: prismic.ImageField<never>;
 	
 	/**
+	 * Cta field in *Feature → Default → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: feature.default.primary.cta
+	 * - **Documentation**: https://prismic.io/docs/fields/link
+	 */
+	cta: prismic.Repeatable<prismic.LinkField<string, string, unknown, prismic.FieldState, never>>;
+	
+	/**
 	 * Color field in *Feature → Default → Primary*
 	 *
 	 * - **Field Type**: Color
@@ -546,9 +556,83 @@ export interface FeatureSliceDefaultPrimary {
 export type FeatureSliceDefault = prismic.SharedSliceVariation<"default", Simplify<FeatureSliceDefaultPrimary>, never>;
 
 /**
+ * Primary content in *Feature → Image Left → Primary*
+ */
+export interface FeatureSliceImageLeftPrimary {
+	/**
+	 * Eyebrow field in *Feature → Image Left → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: feature.imageLeft.primary.eyebrow
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	eyebrow: prismic.KeyTextField;
+	
+	/**
+	 * Title field in *Feature → Image Left → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: feature.imageLeft.primary.title
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	title: prismic.RichTextField;
+	
+	/**
+	 * Text field in *Feature → Image Left → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: feature.imageLeft.primary.text
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	text: prismic.RichTextField;
+	
+	/**
+	 * Image field in *Feature → Image Left → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: feature.imageLeft.primary.image
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	image: prismic.ImageField<never>;
+	
+	/**
+	 * Cta field in *Feature → Image Left → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: feature.imageLeft.primary.cta
+	 * - **Documentation**: https://prismic.io/docs/fields/link
+	 */
+	cta: prismic.Repeatable<prismic.LinkField<string, string, unknown, prismic.FieldState, never>>;
+	
+	/**
+	 * Color field in *Feature → Image Left → Primary*
+	 *
+	 * - **Field Type**: Color
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: feature.imageLeft.primary.color
+	 * - **Documentation**: https://prismic.io/docs/fields/color
+	 */
+	color: prismic.ColorField;
+}
+
+/**
+ * Image Left variation for Feature Slice
+ *
+ * - **API ID**: `imageLeft`
+ * - **Description**: Image Left
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FeatureSliceImageLeft = prismic.SharedSliceVariation<"imageLeft", Simplify<FeatureSliceImageLeftPrimary>, never>;
+
+/**
  * Slice variation for *Feature*
  */
-type FeatureSliceVariation = FeatureSliceDefault
+type FeatureSliceVariation = FeatureSliceDefault | FeatureSliceImageLeft
 
 /**
  * Feature Shared Slice
@@ -760,8 +844,10 @@ declare module "@prismicio/client" {
 			FaqSliceDefault,
 			FeatureSlice,
 			FeatureSliceDefaultPrimary,
+			FeatureSliceImageLeftPrimary,
 			FeatureSliceVariation,
 			FeatureSliceDefault,
+			FeatureSliceImageLeft,
 			HeroSlice,
 			HeroSliceDefaultPrimary,
 			HeroSliceImageLeftPrimary,
