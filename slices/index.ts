@@ -5,11 +5,13 @@ import Coverage from "./Coverage";
 import Faq from "./Faq";
 import Feature from "./Feature";
 import Hero from "./Hero";
+import OtherTopics from "./OtherTopics";
 
 export const components = {
 	care_line_spotlight: CareLineSpotlight,
 	coverage: Coverage,
 	faq: Faq,
 	feature: Feature,
-	hero: Hero
+	hero: Hero,
+	other_topics: OtherTopics
 };

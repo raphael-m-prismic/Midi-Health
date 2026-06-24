@@ -29,6 +29,9 @@
             },
             "coverage": {
               "type": "SharedSlice"
+            },
+            "other_topics": {
+              "type": "SharedSlice"
             }
           }
         }

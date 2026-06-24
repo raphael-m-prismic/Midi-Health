@@ -293,7 +293,7 @@ interface HeaderDocumentData {
  */
 export type HeaderDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<HeaderDocumentData>, "header", Lang>;
 
-type HomeDocumentDataSlicesSlice = HeroSlice | CareLineSpotlightSlice | CoverageSlice | FaqSlice | FeatureSlice
+type HomeDocumentDataSlicesSlice = HeroSlice | CareLineSpotlightSlice | CoverageSlice | FaqSlice | FeatureSlice | OtherTopicsSlice
 
 /**
  * Content for Home documents
@@ -353,7 +353,7 @@ interface HomeDocumentData {
  */
 export type HomeDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-type PageDocumentDataSlicesSlice = HeroSlice | FaqSlice | FeatureSlice | CareLineSpotlightSlice | CoverageSlice
+type PageDocumentDataSlicesSlice = HeroSlice | FaqSlice | FeatureSlice | CareLineSpotlightSlice | CoverageSlice | OtherTopicsSlice
 
 /**
  * Content for Page documents
@@ -1052,6 +1052,109 @@ type HeroSliceVariation = HeroSliceDefault | HeroSliceImageLeft
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Item in *OtherTopics → Default → Primary → Items*
+ */
+export interface OtherTopicsSliceDefaultPrimaryItemsItem {
+	/**
+	 * Image field in *OtherTopics → Default → Primary → Items*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: other_topics.default.primary.items[].image
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	image: prismic.ImageField<never>;
+	
+	/**
+	 * Item Title field in *OtherTopics → Default → Primary → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: other_topics.default.primary.items[].item_title
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	item_title: prismic.KeyTextField;
+	
+	/**
+	 * Link field in *OtherTopics → Default → Primary → Items*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: other_topics.default.primary.items[].link
+	 * - **Documentation**: https://prismic.io/docs/fields/link
+	 */
+	link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Primary content in *OtherTopics → Default → Primary*
+ */
+export interface OtherTopicsSliceDefaultPrimary {
+	/**
+	 * Eyebrow field in *OtherTopics → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: other_topics.default.primary.eyebrow
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	eyebrow: prismic.KeyTextField;
+	
+	/**
+	 * Title field in *OtherTopics → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: other_topics.default.primary.title
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	title: prismic.RichTextField;
+	
+	/**
+	 * Text field in *OtherTopics → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: other_topics.default.primary.text
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	text: prismic.RichTextField;
+	
+	/**
+	 * Items field in *OtherTopics → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: other_topics.default.primary.items[]
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	items: prismic.GroupField<Simplify<OtherTopicsSliceDefaultPrimaryItemsItem>>;
+}
+
+/**
+ * Default variation for OtherTopics Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type OtherTopicsSliceDefault = prismic.SharedSliceVariation<"default", Simplify<OtherTopicsSliceDefaultPrimary>, never>;
+
+/**
+ * Slice variation for *OtherTopics*
+ */
+type OtherTopicsSliceVariation = OtherTopicsSliceDefault
+
+/**
+ * OtherTopics Shared Slice
+ *
+ * - **API ID**: `other_topics`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type OtherTopicsSlice = prismic.SharedSlice<"other_topics", OtherTopicsSliceVariation>;
+
 declare module "@prismicio/client" {
 	interface CreateClient {
 		(repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
@@ -1106,7 +1209,12 @@ declare module "@prismicio/client" {
 			HeroSliceImageLeftPrimary,
 			HeroSliceVariation,
 			HeroSliceDefault,
-			HeroSliceImageLeft
+			HeroSliceImageLeft,
+			OtherTopicsSlice,
+			OtherTopicsSliceDefaultPrimaryItemsItem,
+			OtherTopicsSliceDefaultPrimary,
+			OtherTopicsSliceVariation,
+			OtherTopicsSliceDefault
 		}
 	}
 }
