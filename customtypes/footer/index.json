@@ -1,0 +1,119 @@
+{
+  "id": "footer",
+  "label": "Footer",
+  "repeatable": false,
+  "status": true,
+  "format": "custom",
+  "json": {
+    "Main": {
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo"
+        }
+      },
+      "logo_band_color": {
+        "type": "Color",
+        "config": {
+          "label": "Logo Band Color"
+        }
+      },
+      "newsletter_title": {
+        "type": "Text",
+        "config": {
+          "label": "Newsletter Title"
+        }
+      },
+      "newsletter_placeholder": {
+        "type": "Text",
+        "config": {
+          "label": "Newsletter Placeholder"
+        }
+      },
+      "newsletter_cta_label": {
+        "type": "Text",
+        "config": {
+          "label": "Newsletter CTA Label"
+        }
+      },
+      "copyright": {
+        "type": "Text",
+        "config": {
+          "label": "Copyright"
+        }
+      },
+      "column_1_links": {
+        "type": "Link",
+        "config": {
+          "label": "Column 1 Links",
+          "allowText": true,
+          "repeat": true
+        }
+      },
+      "column_2_links": {
+        "type": "Link",
+        "config": {
+          "label": "Column 2 Links",
+          "allowText": true,
+          "repeat": true
+        }
+      },
+      "column_3_links": {
+        "type": "Link",
+        "config": {
+          "label": "Column 3 Links",
+          "allowText": true,
+          "repeat": true
+        }
+      },
+      "legal_links": {
+        "type": "Link",
+        "config": {
+          "label": "Legal Links",
+          "allowText": true,
+          "repeat": true
+        }
+      },
+      "badges": {
+        "type": "Group",
+        "config": {
+          "label": "Badges",
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "label": "Image"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link"
+              }
+            }
+          }
+        }
+      },
+      "social_links": {
+        "type": "Group",
+        "config": {
+          "label": "Social Links",
+          "fields": {
+            "platform": {
+              "type": "Text",
+              "config": {
+                "label": "Platform"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
