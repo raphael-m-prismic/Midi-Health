@@ -780,17 +780,17 @@ export interface FeatureSliceDefaultPrimary {
 	 * - **API ID Path**: feature.default.primary.cta
 	 * - **Documentation**: https://prismic.io/docs/fields/link
 	 */
-	cta: prismic.Repeatable<prismic.LinkField<string, string, unknown, prismic.FieldState, never>>;
+	cta: prismic.Repeatable<prismic.LinkField<string, string, unknown, prismic.FieldState, "Primary" | "Secondary">>;
 	
 	/**
-	 * Color field in *Feature → Default → Primary*
+	 * Background Color field in *Feature → Default → Primary*
 	 *
 	 * - **Field Type**: Color
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: feature.default.primary.color
+	 * - **API ID Path**: feature.default.primary.background_color
 	 * - **Documentation**: https://prismic.io/docs/fields/color
 	 */
-	color: prismic.ColorField;
+	background_color: prismic.ColorField;
 }
 
 /**
@@ -854,17 +854,17 @@ export interface FeatureSliceImageLeftPrimary {
 	 * - **API ID Path**: feature.imageLeft.primary.cta
 	 * - **Documentation**: https://prismic.io/docs/fields/link
 	 */
-	cta: prismic.Repeatable<prismic.LinkField<string, string, unknown, prismic.FieldState, never>>;
+	cta: prismic.Repeatable<prismic.LinkField<string, string, unknown, prismic.FieldState, "Primary" | "Secondary">>;
 	
 	/**
-	 * Color field in *Feature → Image Left → Primary*
+	 * Background Color field in *Feature → Image Left → Primary*
 	 *
 	 * - **Field Type**: Color
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: feature.imageLeft.primary.color
+	 * - **API ID Path**: feature.imageLeft.primary.background_color
 	 * - **Documentation**: https://prismic.io/docs/fields/color
 	 */
-	color: prismic.ColorField;
+	background_color: prismic.ColorField;
 }
 
 /**

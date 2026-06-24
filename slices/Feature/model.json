@@ -52,14 +52,17 @@
             "select": null,
             "allowTargetBlank": true,
             "allowText": true,
-            "repeat": true
+            "repeat": true,
+            "variants": [
+              "Primary",
+              "Secondary"
+            ]
           }
         },
-        "color": {
+        "background_color": {
           "type": "Color",
           "config": {
-            "label": "Color",
-            "placeholder": ""
+            "label": "Background Color"
           }
         }
       }
@@ -106,13 +109,17 @@
             "label": "Cta",
             "allowTargetBlank": true,
             "allowText": true,
-            "repeat": true
+            "repeat": true,
+            "variants": [
+              "Primary",
+              "Secondary"
+            ]
           }
         },
-        "color": {
+        "background_color": {
           "type": "Color",
           "config": {
-            "label": "Color"
+            "label": "Background Color"
           }
         }
       }

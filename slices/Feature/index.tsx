@@ -38,7 +38,12 @@ const Feature: FC<FeatureProps> = ({ slice }) => {
 						<li key={index}>
 							<PrismicNextLink
 								field={link}
-								className="inline-block rounded-xl bg-neutral-50 px-8 py-4 font-semibold text-neutral-900"
+								className={clsx(
+									"inline-block rounded-xl px-8 py-4 font-semibold",
+									link.variant === "Secondary"
+										? "bg-[#324d9e] text-white"
+										: "bg-white text-black",
+								)}
 							/>
 						</li>
 					))}
@@ -60,7 +65,7 @@ const Feature: FC<FeatureProps> = ({ slice }) => {
 		<section
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}
-			style={{ backgroundColor: slice.primary.color || undefined }}
+			style={{ backgroundColor: slice.primary.background_color || undefined }}
 		>
 			<div className="mx-auto grid w-full max-w-[1440px] md:grid-cols-2">
 				{text}
