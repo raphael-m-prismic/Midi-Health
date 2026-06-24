@@ -1,0 +1,59 @@
+{
+  "id": "testimonials",
+  "name": "Testimonials",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default",
+      "docURL": "",
+      "imageUrl": "",
+      "version": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow"
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "multi": "heading2,strong,em"
+          }
+        },
+        "cta": {
+          "type": "Link",
+          "config": {
+            "label": "Cta",
+            "allowText": true,
+            "repeat": true
+          }
+        },
+        "items": {
+          "type": "Group",
+          "config": {
+            "label": "Items",
+            "fields": {
+              "quote": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Quote",
+                  "multi": "paragraph,strong,em"
+                }
+              },
+              "author": {
+                "type": "Text",
+                "config": {
+                  "label": "Author"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

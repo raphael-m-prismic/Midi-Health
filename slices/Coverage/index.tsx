@@ -38,7 +38,7 @@ const Coverage: FC<CoverageProps> = ({ slice }) => {
 						<li key={index}>
 							<PrismicNextLink
 								field={link}
-								className="inline-block rounded-xl bg-indigo-700 px-8 py-4 font-semibold text-white"
+								className="inline-block rounded-xl bg-[#283e7e] px-8 py-4 font-semibold text-white"
 							/>
 						</li>
 					))}

@@ -55,7 +55,7 @@ export const Header: FC = async () => {
 							<PrismicNextLink
 								key={index}
 								field={link}
-								className="inline-block rounded-xl bg-indigo-700 px-6 py-3 font-semibold text-white transition-colors hover:bg-indigo-800"
+								className="inline-block rounded-xl bg-[#283e7e] px-6 py-3 font-semibold text-white transition-colors hover:bg-indigo-800"
 							/>
 						))
 					}

@@ -53,7 +53,7 @@ export const MobileNav: FC<MobileNavProps> = ({
 				<PrismicNextLink
 					key={index}
 					field={link}
-					className="inline-block rounded-xl bg-indigo-700 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-indigo-800"
+					className="inline-block rounded-xl bg-[#283e7e] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-indigo-800"
 				/>
 			))}
 
@@ -111,7 +111,7 @@ export const MobileNav: FC<MobileNavProps> = ({
 								key={index}
 								field={link}
 								onClick={close}
-								className="inline-block rounded-xl bg-indigo-700 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-indigo-800"
+								className="inline-block rounded-xl bg-[#283e7e] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-indigo-800"
 							/>
 						))}
 						<button
@@ -168,7 +168,7 @@ export const MobileNav: FC<MobileNavProps> = ({
 								key={index}
 								field={link}
 								onClick={close}
-								className="block rounded-xl bg-indigo-700 px-6 py-4 text-center text-lg font-semibold text-white transition-colors hover:bg-indigo-800"
+								className="block rounded-xl bg-[#283e7e] px-6 py-4 text-center text-lg font-semibold text-white transition-colors hover:bg-indigo-800"
 							/>
 						))}
 					</div>

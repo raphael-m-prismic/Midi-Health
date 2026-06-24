@@ -56,7 +56,7 @@ export const OtherTopicsCarousel: FC<OtherTopicsCarouselProps> = ({ items }) => 
 								{item.image.url && (
 									<PrismicNextImage
 										field={item.image}
-										className="aspect-[4/5] w-full rounded-2xl object-cover"
+										className="aspect-[4/5] w-full object-cover"
 									/>
 								)}
 								{hasLink ? (

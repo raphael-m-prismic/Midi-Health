@@ -26,6 +26,9 @@
             },
             "other_topics": {
               "type": "SharedSlice"
+            },
+            "testimonials": {
+              "type": "SharedSlice"
             }
           }
         }

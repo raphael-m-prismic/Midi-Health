@@ -6,6 +6,7 @@ import Faq from "./Faq";
 import Feature from "./Feature";
 import Hero from "./Hero";
 import OtherTopics from "./OtherTopics";
+import Testimonials from "./Testimonials";
 
 export const components = {
 	care_line_spotlight: CareLineSpotlight,
@@ -13,5 +14,6 @@ export const components = {
 	faq: Faq,
 	feature: Feature,
 	hero: Hero,
-	other_topics: OtherTopics
+	other_topics: OtherTopics,
+	testimonials: Testimonials
 };
