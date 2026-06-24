@@ -46,6 +46,55 @@ type ContentRelationshipFieldWithData<
 		>
 }[Exclude<TCustomType[number], string>["id"]];
 
+/**
+ * Content for Header documents
+ */
+interface HeaderDocumentData {
+	/**
+	 * Logo field in *Header*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: header.logo
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	logo: prismic.ImageField<never>;
+	
+	/**
+	 * Nav Links field in *Header*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: header.nav_links
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/link
+	 */
+	nav_links: prismic.Repeatable<prismic.LinkField<string, string, unknown, prismic.FieldState, never>>;
+	
+	/**
+	 * CTA field in *Header*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: header.cta
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/link
+	 */
+	cta: prismic.Repeatable<prismic.LinkField<string, string, unknown, prismic.FieldState, never>>;
+}
+
+/**
+ * Header document from Prismic
+ *
+ * - **API ID**: `header`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HeaderDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<HeaderDocumentData>, "header", Lang>;
+
 type HomeDocumentDataSlicesSlice = HeroSlice | CareLineSpotlightSlice | CoverageSlice | FaqSlice | FeatureSlice
 
 /**
@@ -166,7 +215,7 @@ interface PageDocumentData {
  */
 export type PageDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = HomeDocument | PageDocument;
+export type AllDocumentTypes = HeaderDocument | HomeDocument | PageDocument;
 
 /**
  * Primary content in *CareLineSpotlight → Default → Primary*
@@ -820,6 +869,8 @@ declare module "@prismicio/client" {
 	
 	namespace Content {
 		export type {
+			HeaderDocument,
+			HeaderDocumentData,
 			HomeDocument,
 			HomeDocumentData,
 			HomeDocumentDataSlicesSlice,
