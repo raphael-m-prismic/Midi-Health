@@ -19,7 +19,7 @@ type Props = {
  */
 const panelComponents: RichTextComponents = {
 	paragraph: ({ children }) => (
-		<p className="border-t border-black pt-4 text-[#2B2B2B] leading-relaxed first:border-t-0 first:pt-0">
+		<p className="border-t border-black pt-4 text-black leading-relaxed first:border-t-0 first:pt-0">
 			{children}
 		</p>
 	),
@@ -39,7 +39,7 @@ export function CarePlanAccordion({ plans }: Props) {
 				const buttonId = `care-plan-button-${index}`;
 
 				return (
-					<div key={index} className="border-t border-black last:border-b">
+					<div key={index}>
 						<h3>
 							<button
 								type="button"
@@ -58,14 +58,14 @@ export function CarePlanAccordion({ plans }: Props) {
 								)}
 
 								{/* Item title */}
-								<span className={clsx(serif, "flex-1 text-lg font-semibold text-[#2B2B2B] md:text-xl")}>
+								<span className={clsx(serif, "flex-1 text-xl text-[#2B2B2B] md:text-2xl")}>
 									<PrismicText field={item.title} />
 								</span>
 
 								{/* +/- toggle */}
 								<span
 									aria-hidden="true"
-									className="shrink-0 text-2xl leading-none text-[#2B2B2B]"
+									className="shrink-0 text-xl md:text-4xl leading-none text-[#2B2B2B]"
 								>
 									{isOpen ? "−" : "+"}
 								</span>
