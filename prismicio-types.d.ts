@@ -293,7 +293,7 @@ interface HeaderDocumentData {
  */
 export type HeaderDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<HeaderDocumentData>, "header", Lang>;
 
-type HomeDocumentDataSlicesSlice = HeroSlice | CareLineSpotlightSlice | CoverageSlice | FaqSlice | FeatureSlice | OtherTopicsSlice | TestimonialsSlice
+type HomeDocumentDataSlicesSlice = HeroSlice | CareLineSpotlightSlice | CoverageSlice | FaqSlice | FeatureSlice | OtherTopicsSlice | TestimonialsSlice | CarePlanSlice
 
 /**
  * Content for Home documents
@@ -353,7 +353,7 @@ interface HomeDocumentData {
  */
 export type HomeDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-type PageDocumentDataSlicesSlice = HeroSlice | FaqSlice | FeatureSlice | CareLineSpotlightSlice | CoverageSlice | OtherTopicsSlice | TestimonialsSlice
+type PageDocumentDataSlicesSlice = HeroSlice | FaqSlice | FeatureSlice | CareLineSpotlightSlice | CoverageSlice | OtherTopicsSlice | TestimonialsSlice | CarePlanSlice
 
 /**
  * Content for Page documents
@@ -482,6 +482,109 @@ type CareLineSpotlightSliceVariation = CareLineSpotlightSliceDefault
  * - **Documentation**: https://prismic.io/docs/slices
  */
 export type CareLineSpotlightSlice = prismic.SharedSlice<"care_line_spotlight", CareLineSpotlightSliceVariation>;
+
+/**
+ * Item in *CarePlan → Default → Primary → Plans*
+ */
+export interface CarePlanSliceDefaultPrimaryPlansItem {
+	/**
+	 * Icon field in *CarePlan → Default → Primary → Plans*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: care_plan.default.primary.plans[].icon
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	icon: prismic.ImageField<never>;
+	
+	/**
+	 * Title field in *CarePlan → Default → Primary → Plans*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: care_plan.default.primary.plans[].title
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	title: prismic.RichTextField;
+	
+	/**
+	 * Text field in *CarePlan → Default → Primary → Plans*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: care_plan.default.primary.plans[].text
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	text: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *CarePlan → Default → Primary*
+ */
+export interface CarePlanSliceDefaultPrimary {
+	/**
+	 * Title field in *CarePlan → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: care_plan.default.primary.title
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	title: prismic.RichTextField;
+	
+	/**
+	 * Text field in *CarePlan → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: care_plan.default.primary.text
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	text: prismic.RichTextField;
+	
+	/**
+	 * CTA field in *CarePlan → Default → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: care_plan.default.primary.cta
+	 * - **Documentation**: https://prismic.io/docs/fields/link
+	 */
+	cta: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+	
+	/**
+	 * Plans field in *CarePlan → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: care_plan.default.primary.plans[]
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	plans: prismic.GroupField<Simplify<CarePlanSliceDefaultPrimaryPlansItem>>;
+}
+
+/**
+ * Default variation for CarePlan Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CarePlanSliceDefault = prismic.SharedSliceVariation<"default", Simplify<CarePlanSliceDefaultPrimary>, never>;
+
+/**
+ * Slice variation for *CarePlan*
+ */
+type CarePlanSliceVariation = CarePlanSliceDefault
+
+/**
+ * CarePlan Shared Slice
+ *
+ * - **API ID**: `care_plan`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CarePlanSlice = prismic.SharedSlice<"care_plan", CarePlanSliceVariation>;
 
 /**
  * Primary content in *Coverage → Default → Primary*
@@ -1280,6 +1383,11 @@ declare module "@prismicio/client" {
 			CareLineSpotlightSliceDefaultPrimary,
 			CareLineSpotlightSliceVariation,
 			CareLineSpotlightSliceDefault,
+			CarePlanSlice,
+			CarePlanSliceDefaultPrimaryPlansItem,
+			CarePlanSliceDefaultPrimary,
+			CarePlanSliceVariation,
+			CarePlanSliceDefault,
 			CoverageSlice,
 			CoverageSliceDefaultPrimary,
 			CoverageSliceImageLeftPrimary,

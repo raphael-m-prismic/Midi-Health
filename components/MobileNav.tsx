@@ -49,13 +49,13 @@ export const MobileNav: FC<MobileNavProps> = ({
 	return (
 		<div className={clsx("flex items-center gap-3", className)}>
 			{/* CTA pill */}
-			{cta.map((link, index) => (
+			{/* {cta.map((link, index) => (
 				<PrismicNextLink
 					key={index}
 					field={link}
 					className="inline-block rounded-xl bg-[#283e7e] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-indigo-800"
 				/>
-			))}
+			))} */}
 
 			{/* Account button */}
 			<button

@@ -1,0 +1,70 @@
+{
+  "id": "care_plan",
+  "name": "CarePlan",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default",
+      "docURL": "",
+      "imageUrl": "",
+      "version": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "multi": "heading2",
+            "allowTargetBlank": true
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text",
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+            "allowTargetBlank": true
+          }
+        },
+        "cta": {
+          "type": "Link",
+          "config": {
+            "label": "CTA",
+            "allowTargetBlank": true,
+            "allowText": true
+          }
+        },
+        "plans": {
+          "type": "Group",
+          "config": {
+            "label": "Plans",
+            "fields": {
+              "icon": {
+                "type": "Image",
+                "config": {
+                  "label": "Icon"
+                }
+              },
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Title",
+                  "single": "heading3"
+                }
+              },
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Text",
+                  "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+                  "allowTargetBlank": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

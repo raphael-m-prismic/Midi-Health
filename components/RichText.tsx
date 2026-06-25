@@ -15,10 +15,10 @@ type Props = {
 export function RichText({ field, components, additionalClassNames }: Props) {
   const defaultComponents: RichTextComponents = {
     heading1: ({ children }) => (
-      <h1 className={clsx(serif, "mb-5 md:mb-6 text-5xl md:text-6xl font-semibold text-neutral-900", additionalClassNames)}>{children}</h1>
+      <h1 className={clsx(serif, "mb-5 md:mb-6 text-5xl md:text-5xl lg:text-6xl font-semibold text-neutral-900", additionalClassNames)}>{children}</h1>
     ),
     heading2: ({ children }) => (
-      <h2 className={clsx(serif, "mb-5 md:mb-6 text-4xl font-semibold text-neutral-900", additionalClassNames)}>{children}</h2>
+      <h2 className={clsx(serif, "mb-5 text-4xl md:text-5xl lg:text-5xl font-semibold text-neutral-900", additionalClassNames)}>{children}</h2>
     ),
     heading3: ({ children }) => (
       <h3 className={clsx(serif, "mb-3 md:mb-4 text-xl md:text-2xl font-semibold text-neutral-900", additionalClassNames)}>{children}</h3>
@@ -33,7 +33,7 @@ export function RichText({ field, components, additionalClassNames }: Props) {
       <h6 className={clsx(serif, "mb-2 text-sm md:text-base font-semibold text-neutral-900", additionalClassNames)}>{children}</h6>
     ),
     paragraph: ({ children }) => (
-      <p className={clsx("mb-4 text-base text-neutral-900", additionalClassNames)}>{children}</p>
+      <p className={clsx("mb-4 text-xl text-neutral-900", additionalClassNames)}>{children}</p>
     ),
     strong: ({ children }) => <strong className={clsx("font-bold", additionalClassNames)}>{children}</strong>,
     em: ({ children }) => <em className={clsx("italic", additionalClassNames)}>{children}</em>,
